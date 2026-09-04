@@ -1,0 +1,374 @@
+/* =========================
+   STUDENTHUB — MINIMAL STYLE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+
+/* =========================
+   STUDENT SETUP
+========================= */
+
+#setupSection {
+    max-width: 520px;
+    margin: 70px auto;
+    padding: 45px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+}
+
+#setupSection h1 {
+    margin: 0 0 50px;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+#setupSection h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+#setupSection p {
+    margin-bottom: 35px;
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LABELS & INPUTS
+========================= */
+
+label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 9px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #777777;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0;
+    background: transparent;
+    font-size: 15px;
+    color: #111111;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-bottom: 1px solid #111111;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    border-radius: 0;
+    padding: 13px 20px;
+    margin-top: 25px;
+    background: #111111;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.75;
+}
+
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
+
+#dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 35px 80px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    padding: 35px 0 55px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -2.5px;
+}
+
+header p {
+    margin: 12px 0 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999999;
+}
+
+
+/* =========================
+   INSTALL BUTTON
+========================= */
+
+#installBtn {
+    margin-top: 0;
+    padding: 10px 15px;
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #dddddd;
+}
+
+
+/* =========================
+   DIGITAL CLOCK
+========================= */
+
+#digitalClock {
+    margin-top: 35px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #777777;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 35px 0;
+    margin-bottom: 15px;
+    background: #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+section h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+section > p {
+    margin-top: 0;
+    color: #888888;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CLASS CARDS
+========================= */
+
+.class-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    min-height: 145px;
+    margin: 20px 1% 0 0;
+    padding: 22px;
+    background: #f7f7f7;
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+}
+
+.class-card h3 {
+    margin: 0 0 25px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.class-card p {
+    margin: 7px 0;
+    font-size: 12px;
+    color: #777777;
+}
+
+
+/* =========================
+   NEWLY ADDED CLASSES
+========================= */
+
+#classList > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    min-height: 145px;
+    margin: 20px 1% 0 0;
+    padding: 22px;
+    background: #f7f7f7;
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+}
+
+#classList h3 {
+    margin: 0 0 20px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#classList p {
+    margin: 7px 0;
+    font-size: 12px;
+    color: #777777;
+}
+
+#classList button {
+    margin-top: 15px;
+    padding: 7px 10px;
+    background: transparent;
+    color: #777777;
+    border: 1px solid #dddddd;
+    font-size: 9px;
+}
+
+
+/* =========================
+   ADD CLASS FORM
+========================= */
+
+#classForm {
+    display: none;
+    max-width: 600px;
+    margin-top: 30px;
+    padding: 30px;
+    background: #fafafa;
+    border: 1px solid #eeeeee;
+}
+
+#classForm h3 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   STUDY PLANNER
+========================= */
+
+#studySection {
+    border-top: 1px solid #eeeeee;
+}
+
+#studyResults {
+    margin-top: 25px;
+}
+
+#studyResults div {
+    padding: 25px;
+    background: #f7f7f7;
+    border: 1px solid #eeeeee;
+}
+
+#studyResults h3 {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#studyResults li {
+    margin: 10px 0;
+    font-size: 13px;
+    color: #666666;
+}
+
+
+/* =========================
+   EXPENSE TRACKER
+========================= */
+
+#expenseSection {
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    #dashboard {
+        padding: 15px 20px 60px;
+    }
+
+    header {
+        padding-top: 20px;
+        padding-bottom: 35px;
+    }
+
+    .header-top h1 {
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    section {
+        padding: 25px 0;
+    }
+
+    .class-card,
+    #classList > div {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #setupSection {
+        margin: 25px 15px;
+        padding: 30px 25px;
+    }
+
+    #setupSection h1 {
+        margin-bottom: 40px;
+    }
+
+    #digitalClock {
+        font-size: 12px;
+    }
+}

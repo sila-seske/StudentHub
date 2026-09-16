@@ -1380,20 +1380,42 @@ console.log(
     displayClasses();
 
     displayTomorrowClasses();
+
 // =========================
 // PWA INSTALL BUTTON
 // =========================
 
 let installButton =
-    document.getElementById("installBtn");
+    document.getElementById(
+        "installBtn"
+    );
 
-let deferredInstallPrompt = null;
+let deferredInstallPrompt =
+    null;
 
 
 if (installButton) {
 
-    // Always show the button
-    installButton.style.display = "block";
+    // Show the button
+    installButton.style.display =
+        "block";
+
+
+    // =========================
+    // CHECK IF ALREADY INSTALLED
+    // =========================
+
+    if (
+        window.matchMedia(
+            "(display-mode: standalone)"
+        ).matches ||
+        window.navigator.standalone === true
+    ) {
+
+        installButton.style.display =
+            "none";
+
+    }
 
 
     // =========================
@@ -1406,7 +1428,12 @@ if (installButton) {
 
             event.preventDefault();
 
-            deferredInstallPrompt = event;
+            deferredInstallPrompt =
+                event;
+
+            console.log(
+                "StudentHub install prompt is ready."
+            );
 
         }
     );
@@ -1420,18 +1447,30 @@ if (installButton) {
         "click",
         async function () {
 
-            // Chrome provided an install prompt
+            // If Chrome provided the real
+            // installation prompt
             if (deferredInstallPrompt) {
 
                 deferredInstallPrompt.prompt();
 
-                let choice =
+
+                const choice =
                     await deferredInstallPrompt.userChoice;
 
-                deferredInstallPrompt = null;
+
+                console.log(
+                    "Install result:",
+                    choice.outcome
+                );
+
+
+                deferredInstallPrompt =
+                    null;
+
 
                 if (
-                    choice.outcome === "accepted"
+                    choice.outcome ===
+                    "accepted"
                 ) {
 
                     installButton.style.display =
@@ -1440,12 +1479,16 @@ if (installButton) {
                 }
 
                 return;
+
             }
 
 
-            // Chrome did not provide the prompt
+            // =========================
+            // FALLBACK
+            // =========================
+
             alert(
-                "To install StudentHub, tap Chrome's ⋮ menu and choose 'Add to Home screen'."
+                "StudentHub cannot open the installation prompt yet. Please refresh the page and try again."
             );
 
         }
@@ -1460,16 +1503,22 @@ if (installButton) {
         "appinstalled",
         function () {
 
+            console.log(
+                "StudentHub was installed."
+            );
+
+
             installButton.style.display =
                 "none";
 
-            deferredInstallPrompt = null;
+
+            deferredInstallPrompt =
+                null;
 
         }
     );
 
 }
-
 
     // =========================
     // COURSE MATERIALS

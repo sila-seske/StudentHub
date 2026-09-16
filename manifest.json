@@ -1,9 +1,0 @@
-{
-    "name": "StudentHub",
-    "short_name": "StudentHub",
-    "start_url": "./index.html",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#111111",
-    "description": "Your student life, organized."
-}

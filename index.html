@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudentHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SETUP
+    ========================== -->
+
+    <section id="setupSection">
+
+        <h1>🎓 StudentHub</h1>
+
+        <h2>👋 Welcome!</h2>
+
+        <p>
+            Tell us a little about yourself
+            so StudentHub can give you the
+            right experience.
+        </p>
+
+
+        <!-- ROLE SELECTION -->
+
+        <div id="roleSelection">
+
+            <label>
+                How will you use StudentHub?
+            </label>
+
+            <button
+                type="button"
+                id="studentRoleBtn"
+            >
+                🎓 Student
+            </button>
+
+            <button
+                type="button"
+                id="lecturerRoleBtn"
+            >
+                👨‍🏫 Lecturer
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             STUDENT PREFERENCES
+        ========================== -->
+
+        <div id="studentPreferences">
+
+            <label for="studentName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="e.g. Alfred"
+            >
+
+
+            <label for="studyPreference">
+                When do you prefer to study?
+            </label>
+
+            <select id="studyPreference">
+
+                <option value="morning">
+                    🌅 Morning
+                </option>
+
+                <option value="afternoon">
+                    ☀️ Afternoon
+                </option>
+
+                <option value="evening">
+                    🌆 Evening
+                </option>
+
+                <option value="night">
+                    🌙 Night
+                </option>
+
+                <option value="flexible">
+                    🔄 I'm flexible
+                </option>
+
+            </select>
+
+
+            <label for="studyDuration">
+                How long do you normally like to study?
+            </label>
+
+            <select id="studyDuration">
+
+                <option value="30">
+                    30 minutes
+                </option>
+
+                <option value="60">
+                    1 hour
+                </option>
+
+                <option value="90">
+                    1.5 hours
+                </option>
+
+                <option value="120">
+                    2 hours
+                </option>
+
+                <option value="180">
+                    3+ hours
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================
+             LECTURER PREFERENCES
+        ========================== -->
+
+        <div id="lecturerPreferences">
+
+            <label for="lecturerName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="lecturerName"
+                placeholder="e.g. Dr. Alfred"
+            >
+
+
+            <label for="lecturerCourse">
+                Course You Teach
+            </label>
+
+            <input
+                type="text"
+                id="lecturerCourse"
+                placeholder="e.g. CSC 301"
+            >
+
+
+            <p>
+                You can add more courses later.
+            </p>
+
+        </div>
+
+
+        <!-- SAVE -->
+
+        <button id="savePreferencesBtn">
+            Save Preferences
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         APP
+    ========================== -->
+
+    <main id="dashboard">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside id="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <span>
+                    StudentHub
+                </span>
+
+            </div>
+
+
+            <nav>
+
+                <a href="#dashboard">
+                    🏠
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#classesSection">
+                    📅
+                    <span>Classes</span>
+                </a>
+
+                <a
+                    href="#studySection"
+                    id="studyNav"
+                >
+                    📚
+                    <span>Study Planner</span>
+                </a>
+
+                <a href="#materialsSection">
+                    📖
+                    <span>Course Materials</span>
+                </a>
+
+                <a
+                    href="#expenseSection"
+                    id="expenseNav"
+                >
+                    💰
+                    <span>Expense Tracker</span>
+                </a>
+                <a href="#aboutSection">
+    ℹ️
+    <span>About</span>
+</a>
+<a href="#privacySection">
+    🔒
+    <span>Privacy</span>
+</a>
+<a href="#termsSection">
+    📜
+    <span>Terms</span>
+</a>
+<a href="#contactSection">
+    📩
+    <span>Contact</span>
+</a>
+<a href="#disclaimerSection">
+    ⚠️
+    <span>Disclaimer</span>
+</a>
+<a href="#faqSection">
+    ❓
+    <span>Help & FAQ</span>
+</a>
+            </nav>
+
+
+            <div class="sidebar-message">
+
+                <strong>
+                    Better preparation.
+                </strong>
+
+                <p>
+                    Brighter future.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <div id="mainContent">
+
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+
+            <header>
+
+                <div class="header-actions">
+
+                    <button id="installBtn">
+                        📱 Install App
+                    </button>
+
+                </div>
+
+
+                <div id="greeting">
+                    👋 Welcome to StudentHub!
+                </div>
+
+
+                <div class="hero-title">
+
+                    <h1>
+                        Your student life,
+                        <br>
+                        <span>organized.</span>
+                    </h1>
+
+                    <p>
+                        Plan smarter. Study better.
+                        Stay on top of everything.
+                    </p>
+
+                </div>
+
+
+                <div id="digitalClock">
+                    00:00:00
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 QUICK ACTIONS
+            ========================== -->
+
+            <section
+                id="quickActions"
+                class="quick-actions-section"
+            >
+
+                <div
+                    class="quick-card quick-blue"
+                    id="classesQuickCard"
+                >
+
+                    <div class="quick-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            View Classes
+                        </h3>
+
+                        <p>
+                            Check your schedule
+                        </p>
+
+                    </div>
+
+                    <a href="#classesSection">
+                        →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="quick-card quick-green"
+                    id="studyQuickCard"
+                >
+
+                    <div class="quick-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Study Planner
+                        </h3>
+
+                        <p>
+                            Plan your study time
+                        </p>
+
+                    </div>
+
+                    <a href="#studySection">
+                        →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="quick-card quick-purple"
+                    id="materialsQuickCard"
+                >
+
+                    <div class="quick-icon">
+                        📖
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Course Materials
+                        </h3>
+
+                        <p id="materialsQuickText">
+                            Access your resources
+                        </p>
+
+                    </div>
+
+                    <a href="#materialsSection">
+                        →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="quick-card quick-orange"
+                    id="expenseQuickCard"
+                >
+
+                    <div class="quick-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Track Expenses
+                        </h3>
+
+                        <p>
+                            Manage your budget
+                        </p>
+
+                    </div>
+
+                    <a href="#expenseSection">
+                        →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 TOMORROW'S CLASSES
+            ========================== -->
+
+            <section id="tomorrowSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            📅 Tomorrow's Classes
+                        </h2>
+
+                        <p>
+                            What's coming up next.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div id="tomorrowClasses"></div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 NOTIFICATIONS
+            ========================== -->
+
+            <section id="notificationsSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            🔔 Class Reminders
+                        </h2>
+
+                        <p>
+                            Get reminded before your
+                            classes start.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label for="reminderTime">
+                    Remind me
+                </label>
+
+                <select id="reminderTime">
+
+                    <option value="5">
+                        5 minutes before
+                    </option>
+
+                    <option value="10">
+                        10 minutes before
+                    </option>
+
+                    <option
+                        value="15"
+                        selected
+                    >
+                        15 minutes before
+                    </option>
+
+                    <option value="30">
+                        30 minutes before
+                    </option>
+
+                </select>
+
+
+                <button id="enableRemindersBtn">
+                    🔔 Enable Reminders
+                </button>
+
+
+                <p id="reminderStatus">
+                    Reminders are currently off.
+                </p>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CLASSES
+            ========================== -->
+
+            <section id="classesSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            📅 My Classes
+                        </h2>
+
+                        <p>
+                            Keep track of your class
+                            schedule.
+                        </p>
+
+                    </div>
+
+
+                    <button id="addClassBtn">
+                        + Add Class
+                    </button>
+
+                </div>
+
+
+                <div id="classList"></div>
+
+
+                <!-- ADD CLASS FORM -->
+
+                <div id="classForm">
+
+                    <h3>
+                        Add a Class
+                    </h3>
+
+
+                    <label for="courseName">
+                        Course Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="courseName"
+                        placeholder="e.g. CSC 201"
+                    >
+
+
+                    <label for="classDay">
+                        Day
+                    </label>
+
+                    <select id="classDay">
+
+                        <option value="Monday">
+                            Monday
+                        </option>
+
+                        <option value="Tuesday">
+                            Tuesday
+                        </option>
+
+                        <option value="Wednesday">
+                            Wednesday
+                        </option>
+
+                        <option value="Thursday">
+                            Thursday
+                        </option>
+
+                        <option value="Friday">
+                            Friday
+                        </option>
+
+                        <option value="Saturday">
+                            Saturday
+                        </option>
+
+                    </select>
+
+
+                    <label for="startTime">
+                        Start Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="startTime"
+                    >
+
+
+                    <label for="endTime">
+                        End Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="endTime"
+                    >
+
+
+                    <label for="classRoom">
+                        Room
+                    </label>
+
+                    <input
+                        type="text"
+                        id="classRoom"
+                        placeholder="e.g. Hall 4"
+                    >
+
+
+                    <button id="saveClassBtn">
+                        Save Class
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 STUDY PLANNER
+            ========================== -->
+
+            <section id="studySection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            📚 Study Planner
+                        </h2>
+
+                        <p>
+                            Find the best time to study
+                            based on your schedule.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button id="studyPlanBtn">
+                    Find Study Time
+                </button>
+
+
+                <div id="studyResults"></div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 COURSE MATERIALS
+            ========================== -->
+
+            <section id="materialsSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 id="materialsTitle">
+                            📖 Course Materials
+                        </h2>
+
+                        <p id="materialsDescription">
+                            Find useful materials for
+                            your courses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STUDENT MATERIAL BUTTON -->
+
+                <button
+                    id="findMaterialsBtn"
+                >
+                    📚 Find Course Materials
+                </button>
+
+
+                <!-- LECTURER UPLOAD BUTTON -->
+
+                <button
+                    id="uploadMaterialsBtn"
+                >
+                    📤 Upload Course Material
+                </button>
+
+
+                <div id="materialsResults"></div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 EXPENSE TRACKER
+            ========================== -->
+
+            <section id="expenseSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            💰 Expense Tracker
+                        </h2>
+
+                        <p>
+                            Keep track of your student
+                            expenses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="expenseForm">
+
+                    <label for="expenseName">
+                        Expense
+                    </label>
+
+                    <input
+                        type="text"
+                        id="expenseName"
+                        placeholder="e.g. Transportation"
+                    >
+
+
+                    <label for="expenseAmount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="e.g. 1500"
+                    >
+
+
+                    <label for="expenseCategory">
+                        Category
+                    </label>
+
+                    <select id="expenseCategory">
+
+                        <option value="Food">
+                            🍔 Food
+                        </option>
+
+                        <option value="Transport">
+                            🚌 Transport
+                        </option>
+
+                        <option value="School">
+                            📚 School
+                        </option>
+
+                        <option value="Data">
+                            📱 Data
+                        </option>
+
+                        <option value="Other">
+                            📦 Other
+                        </option>
+
+                    </select>
+
+
+                    <button id="addExpenseBtn">
+                        + Add Expense
+                    </button>
+
+                </div>
+
+
+                <div id="expenseSummary">
+
+                    <h3>
+                        💰 Total Spent
+                    </h3>
+
+                    <p id="expenseTotal">
+                        ₦0
+                    </p>
+
+                </div>
+
+
+                <div id="expenseList"></div>
+
+                    </section>
+
+
+        <!-- =========================
+             ABOUT STUDENTHUB
+        ========================== -->
+
+        <section id="aboutSection">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        ℹ️ About StudentHub
+                    </h2>
+
+                    <p>
+                        Your student life, organized.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-intro">
+
+                <h3>
+                    Built for students.
+                </h3>
+
+                <p>
+                    StudentHub is a student-focused platform
+                    designed to make everyday academic life
+                    easier.
+                </p>
+
+                <p>
+                    From keeping track of classes and planning
+                    study time to finding course materials,
+                    managing expenses, and getting class
+                    reminders, StudentHub brings useful
+                    student tools together in one place.
+                </p>
+
+                <p>
+                    Our goal is simple: help students stay
+                    organized, prepared, and focused on what
+                    matters — their education and their future.
+                </p>
+
+            </div>
+
+
+            <div class="about-features">
+
+                <div class="about-feature">
+                    <span>📅</span>
+                    <div>
+                        <strong>Class Management</strong>
+                        <p>Keep your timetable organized.</p>
+                    </div>
+                </div>
+
+
+                <div class="about-feature">
+                    <span>📚</span>
+                    <div>
+                        <strong>Study Planner</strong>
+                        <p>Plan study time around your classes.</p>
+                    </div>
+                </div>
+
+
+                <div class="about-feature">
+                    <span>📖</span>
+                    <div>
+                        <strong>Course Materials</strong>
+                        <p>Find useful learning resources.</p>
+                    </div>
+                </div>
+
+
+                <div class="about-feature">
+                    <span>🔔</span>
+                    <div>
+                        <strong>Class Reminders</strong>
+                        <p>Get reminded before your classes.</p>
+                    </div>
+                </div>
+
+
+                <div class="about-feature">
+                    <span>💰</span>
+                    <div>
+                        <strong>Expense Tracking</strong>
+                        <p>Keep an eye on your student spending.</p>
+                    </div>
+                </div>
+
+
+                <div class="about-feature">
+                    <span>📴</span>
+                    <div>
+                        <strong>Offline-Friendly</strong>
+                        <p>Use important features without constant internet.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="about-mission">
+
+                <strong>
+                    🎓 Our Mission
+                </strong>
+
+                <p>
+                    To build simple, useful tools that make
+                    student life a little easier every day.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             PRIVACY POLICY
+        ========================== -->
+
+        <section id="privacySection">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🔒 Privacy Policy
+                    </h2>
+
+                    <p>
+                        Your privacy matters to us.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="privacy-content">
+
+                <h3>
+                    What information does StudentHub store?
+                </h3>
+
+                <p>
+                    StudentHub may store information you
+                    enter into the app, such as your name,
+                    class schedule, study preferences,
+                    expenses, and notification settings.
+                </p>
+
+
+                <h3>
+                    Where is your information stored?
+                </h3>
+
+                <p>
+                    In the current version of StudentHub,
+                    your information is stored locally on
+                    your device using your browser's
+                    local storage.
+                </p>
+
+                <p>
+                    This means StudentHub does not currently
+                    send this information to a StudentHub
+                    server.
+                </p>
+
+
+                <h3>
+                    Course materials and external websites
+                </h3>
+
+                <p>
+                    StudentHub may provide links to external
+                    websites and learning resources. When
+                    you open one of these links, you are
+                    leaving StudentHub and becoming subject
+                    to that website's own privacy policy
+                    and terms.
+                </p>
+
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+                    If you enable class reminders, StudentHub
+                    uses your browser's notification system
+                    to remind you about upcoming classes.
+                    You can disable reminders at any time.
+                </p>
+
+
+                <h3>
+                    Your control
+                </h3>
+
+                <p>
+                    You control the information you enter
+                    into StudentHub. You can delete saved
+                    classes and expenses from within the app.
+                </p>
+
+
+                <h3>
+                    Changes to this policy
+                </h3>
+
+                <p>
+                    This Privacy Policy may be updated as
+                    StudentHub develops new features or
+                    changes how information is handled.
+                </p>
+
+
+                <p class="privacy-updated">
+                    Last updated: September 2026
+                </p>
+
+            </div>
+
+        </section>
+        
+        <!-- =========================
+     TERMS OF USE
+========================== -->
+
+<section id="termsSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                📜 Terms of Use
+            </h2>
+
+            <p>
+                A few things to know when using StudentHub.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="terms-content">
+
+        <h3>
+            Using StudentHub
+        </h3>
+
+        <p>
+            StudentHub is designed to provide useful
+            tools for organizing student life, including
+            class schedules, study planning, course
+            resources, reminders, and expense tracking.
+        </p>
+
+
+        <h3>
+            Your information
+        </h3>
+
+        <p>
+            You are responsible for the information you
+            enter into StudentHub and for keeping your
+            device and browser secure.
+        </p>
+
+
+        <h3>
+            External resources
+        </h3>
+
+        <p>
+            StudentHub may provide links to third-party
+            websites and learning resources. These websites
+            are operated independently from StudentHub,
+            and we are not responsible for their content,
+            availability, or policies.
+        </p>
+
+
+        <h3>
+            Educational information
+        </h3>
+
+        <p>
+            Study suggestions, course resources, and other
+            educational information provided through
+            StudentHub are intended as general assistance.
+            Students should use their own judgment and
+            verify important academic information.
+        </p>
+
+
+        <h3>
+            Availability
+        </h3>
+
+        <p>
+            We aim to keep StudentHub useful and available,
+            but features may occasionally change, become
+            unavailable, or be updated as the platform
+            develops.
+        </p>
+
+
+        <h3>
+            Changes to these terms
+        </h3>
+
+        <p>
+            These Terms of Use may be updated as StudentHub
+            grows and introduces new features.
+        </p>
+
+
+        <p class="terms-updated">
+            Last updated: September 2026
+        </p>
+
+    </div>
+
+</section>
+<!-- =========================
+     CONTACT STUDENTHUB
+========================== -->
+
+<section id="contactSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                📩 Contact StudentHub
+            </h2>
+
+            <p>
+                Have a question, suggestion, or problem?
+                We'd love to hear from you.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-content">
+
+        <h3>
+            Get in touch
+        </h3>
+
+        <p>
+            Whether you've found a bug, have an idea
+            for a new feature, or simply want to give
+            us feedback, you can reach the StudentHub
+            team by email or connect with us on Instagram.
+        </p>
+
+
+        <div class="contact-links">
+
+            <a
+                href="mailto:getstudenthub@gmail.com"
+                class="contact-email-btn"
+            >
+                📩 Email StudentHub
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/studenthubhq/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-instagram-btn"
+            >
+                📸 Follow us on Instagram
+            </a>
+
+        </div>
+
+
+        <p class="contact-note">
+            We appreciate your feedback and suggestions
+            as StudentHub continues to grow.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     DISCLAIMER
+========================== -->
+
+<section id="disclaimerSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                ⚠️ Disclaimer
+            </h2>
+
+            <p>
+                Important information about using StudentHub.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="disclaimer-content">
+
+        <h3>
+            General Information
+        </h3>
+
+        <p>
+            StudentHub is designed to provide general
+            tools and information to help students
+            organize their academic and everyday lives.
+        </p>
+
+
+        <h3>
+            Academic Information
+        </h3>
+
+        <p>
+            Study suggestions, course materials, and
+            other educational resources provided through
+            StudentHub are intended for general assistance.
+            Always verify important academic information
+            with your institution, lecturer, or official
+            academic source.
+        </p>
+
+
+        <h3>
+            Third-Party Websites
+        </h3>
+
+        <p>
+            StudentHub may contain links to websites and
+            services operated by third parties. We do not
+            control these websites and are not responsible
+            for their content, availability, or policies.
+        </p>
+
+
+        <h3>
+            Expense Tracking
+        </h3>
+
+        <p>
+            The expense tracker is provided as an
+            organizational tool and does not constitute
+            financial advice.
+        </p>
+
+
+        <h3>
+            Availability
+        </h3>
+
+        <p>
+            We aim to keep StudentHub reliable, but we
+            cannot guarantee that every feature or
+            external resource will always be available.
+        </p>
+
+
+        <p class="disclaimer-updated">
+            Last updated: September 2026
+        </p>
+
+    </div>
+
+</section>
+<!-- =========================
+     HELP & FAQ
+========================== -->
+
+<section id="faqSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                ❓ Help & FAQ
+            </h2>
+
+            <p>
+                Quick answers to common StudentHub questions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="faq-content">
+
+
+        <div class="faq-item">
+
+            <h3>
+                📅 How do I add a class?
+            </h3>
+
+            <p>
+                Go to My Classes and tap
+                <strong>+ Add Class</strong>.
+                Enter your course, day, time, and room,
+                then save it.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                📚 How does the Study Planner work?
+            </h3>
+
+            <p>
+                StudentHub uses your saved class schedule
+                and study preferences to suggest suitable
+                times for studying.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                🔔 How do class reminders work?
+            </h3>
+
+            <p>
+                Enable reminders and choose how many
+                minutes before class you want to be
+                notified. Your browser will then provide
+                the reminder.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                📴 Can I use StudentHub offline?
+            </h3>
+
+            <p>
+                StudentHub is designed to work offline
+                for important features that have already
+                been loaded and saved on your device.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                💰 Where are my expenses stored?
+            </h3>
+
+            <p>
+                Your expenses are currently stored locally
+                in your browser on your device.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                📖 Where do the course materials come from?
+            </h3>
+
+            <p>
+                StudentHub provides links to selected
+                learning resources and external websites.
+                Some resources are provided by third-party
+                services.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                📱 Can I install StudentHub?
+            </h3>
+
+            <p>
+                Yes. When your browser supports installation,
+                tap the <strong>Install App</strong> button
+                to install StudentHub as a Progressive Web App.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                📩 How can I contact StudentHub?
+            </h3>
+
+            <p>
+                Visit the Contact section to send us an
+                email or connect with StudentHub on Instagram.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </div>
+
+    </main>
+    <!-- =========================
+     FOOTER
+========================== -->
+
+<footer id="studentHubFooter">
+
+    <div class="footer-brand">
+
+        <div class="footer-logo">
+            🎓
+        </div>
+
+        <div>
+
+            <strong>
+                StudentHub
+            </strong>
+
+            <p>
+                Your student life, organized.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#aboutSection">
+            About
+        </a>
+
+        <a href="#privacySection">
+            Privacy
+        </a>
+
+        <a href="#termsSection">
+            Terms
+        </a>
+
+        <a href="#contactSection">
+            Contact
+        </a>
+
+        <a href="#disclaimerSection">
+            Disclaimer
+        </a>
+
+        <a href="#faqSection">
+            Help & FAQ
+        </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 StudentHub. All rights reserved.
+        </p>
+
+        <a
+            href="https://www.instagram.com/studenthubhq/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📸 @studenthubhq
+        </a>
+<!-- =========================
+     STUDENTHUB STUDY GUIDES
+========================== -->
+
+<section id="studyGuidesSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                📚 Study Guides
+            </h2>
+
+            <p>
+                Simple ways to study smarter.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="study-guide-list">
+
+
+        <!-- EXAMS -->
+
+        <details class="study-guide-card">
+
+            <summary>
+                <span class="study-guide-icon">
+                    📝
+                </span>
+
+                <span class="study-guide-title">
+                    <strong>
+                        How to Study for Exams
+                    </strong>
+
+                    <small>
+                        Prepare smarter, not harder.
+                    </small>
+                </span>
+
+                <span class="study-guide-arrow">
+                    +
+                </span>
+            </summary>
+
+
+            <div class="study-guide-content">
+
+                <h3>
+                    Study with a plan.
+                </h3>
+
+                <p>
+                    Don't try to learn everything at once.
+                    Break your course into smaller topics
+                    and give each one a clear target.
+                </p>
+
+                <p>
+                    After studying, close your notes and
+                    test yourself. Then practice with past
+                    questions and spend extra time on topics
+                    you find difficult.
+                </p>
+
+                <div class="study-guide-tip">
+
+                    🎯 <strong>Try this:</strong>
+
+                    Pick one topic, study for 30 minutes,
+                    close your notes, and write down what
+                    you remember.
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- ACTIVE RECALL -->
+
+        <details class="study-guide-card">
+
+            <summary>
+
+                <span class="study-guide-icon">
+                    🧠
+                </span>
+
+                <span class="study-guide-title">
+
+                    <strong>
+                        Active Recall
+                    </strong>
+
+                    <small>
+                        Learn by testing your memory.
+                    </small>
+
+                </span>
+
+                <span class="study-guide-arrow">
+                    +
+                </span>
+
+            </summary>
+
+
+            <div class="study-guide-content">
+
+                <h3>
+                    Don't just read. Recall.
+                </h3>
+
+                <p>
+                    Read a topic, close your notes, and
+                    try to explain what you remember.
+                    Then check your notes and see what
+                    you missed.
+                </p>
+
+                <p>
+                    You can use questions, flashcards,
+                    brain dumps, or even teach the topic
+                    to someone else.
+                </p>
+
+                <div class="study-guide-tip">
+
+                    ⚡ <strong>Remember:</strong>
+
+                    Read → Close → Recall → Check → Repeat.
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- STUDY ROUTINE -->
+
+        <details class="study-guide-card">
+
+            <summary>
+
+                <span class="study-guide-icon">
+                    📅
+                </span>
+
+                <span class="study-guide-title">
+
+                    <strong>
+                        Build a Study Routine
+                    </strong>
+
+                    <small>
+                        Make studying a habit.
+                    </small>
+
+                </span>
+
+                <span class="study-guide-arrow">
+                    +
+                </span>
+
+            </summary>
+
+
+            <div class="study-guide-content">
+
+                <h3>
+                    Consistency beats perfection.
+                </h3>
+
+                <p>
+                    Choose a realistic study time and
+                    start with manageable sessions.
+                    Your routine should fit around your
+                    classes and everyday life.
+                </p>
+
+                <p>
+                    Give every session a specific goal
+                    and take short breaks. If you miss
+                    a day, don't give up — simply start
+                    again.
+                </p>
+
+                <div class="study-guide-tip">
+
+                    🎯 <strong>Try this:</strong>
+
+                    Choose one study time and use it
+                    consistently for the next 7 days.
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+    </div>
+
+</section>
+    </div>
+
+</footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

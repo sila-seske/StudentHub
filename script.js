@@ -1373,7 +1373,7 @@ console.log(
     updateInterface();
 
 
-    // =========================
+    // =======================
     // INITIAL DISPLAY
     // =========================
 
@@ -1382,112 +1382,119 @@ console.log(
     displayTomorrowClasses();
 
 
-    // =========================
-    // PWA INSTALL BUTTON
-    // =========================
+// =========================
+// PWA INSTALL BUTTON
+// =========================
 
-    let installButton =
-        document.getElementById(
-            "installBtn"
-        );
+let installButton =
+    document.getElementById(
+        "installBtn"
+    );
 
-    let deferredInstallPrompt =
-        null;
+let deferredInstallPrompt =
+    null;
 
 
-    if (installButton) {
+if (installButton) {
+
+    // Always show the button
+    installButton.style.display =
+        "block";
+
+
+    // Check if StudentHub is already installed
+    if (
+        window.matchMedia(
+            "(display-mode: standalone)"
+        ).matches ||
+        window.navigator.standalone === true
+    ) {
 
         installButton.style.display =
             "none";
 
-
-        if (
-            window.matchMedia(
-                "(display-mode: standalone)"
-            ).matches ||
-            window.navigator.standalone === true
-        ) {
-
-            installButton.style.display =
-                "block";
-
-        }
-
-        else {
-
-            window.addEventListener(
-                "beforeinstallprompt",
-                function (event) {
-
-                    event.preventDefault();
-
-                    deferredInstallPrompt =
-                        event;
-
-                    installButton.style.display =
-                        "block";
-
-                }
-            );
-
-
-            installButton.addEventListener(
-                "click",
-                async function () {
-
-                    if (!deferredInstallPrompt) {
-
-                        alert(
-                            "StudentHub cannot be installed from this preview yet. Open it from a supported HTTPS website."
-                        );
-
-                        return;
-
-                    }
-
-
-                    deferredInstallPrompt.prompt();
-
-
-                    const choice =
-                        await deferredInstallPrompt.userChoice;
-
-
-                    deferredInstallPrompt =
-                        null;
-
-
-                    if (
-                        choice.outcome ===
-                        "accepted"
-                    ) {
-
-                        installButton.style.display =
-                            "none";
-
-                    }
-
-                }
-            );
-
-
-            window.addEventListener(
-                "appinstalled",
-                function () {
-
-                    installButton.style.display =
-                        "none";
-
-                    deferredInstallPrompt =
-                        null;
-
-                }
-            );
-
-        }
-
     }
 
+
+    // =========================
+    // INSTALL PROMPT AVAILABLE
+    // =========================
+
+    window.addEventListener(
+        "beforeinstallprompt",
+        function (event) {
+
+            event.preventDefault();
+
+            deferredInstallPrompt =
+                event;
+
+        }
+    );
+
+
+    // =========================
+    // INSTALL BUTTON CLICK
+    // =========================
+
+    installButton.addEventListener(
+        "click",
+        async function () {
+
+            if (!deferredInstallPrompt) {
+
+                alert(
+                    "The StudentHub install option is not available yet. Make sure you are using a supported browser and that StudentHub is loaded from HTTPS."
+                );
+
+                return;
+
+            }
+
+
+            deferredInstallPrompt.prompt();
+
+
+            const choice =
+                await deferredInstallPrompt.userChoice;
+
+
+            deferredInstallPrompt =
+                null;
+
+
+            if (
+                choice.outcome ===
+                "accepted"
+            ) {
+
+                installButton.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    // =========================
+    // APP INSTALLED
+    // =========================
+
+    window.addEventListener(
+        "appinstalled",
+        function () {
+
+            installButton.style.display =
+                "none";
+
+            deferredInstallPrompt =
+                null;
+
+        }
+    );
+
+}
 
     // =========================
     // COURSE MATERIALS

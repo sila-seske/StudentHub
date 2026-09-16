@@ -3,7 +3,7 @@
 // NOTIFICATION ENGINE
 // =========================
 
-const CACHE_NAME = "studenthub-v24";
+const CACHE_NAME = "studenthub-v25";
 
 const FILES_TO_CACHE = [
     "./",

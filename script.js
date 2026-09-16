@@ -1381,7 +1381,6 @@ console.log(
 
     displayTomorrowClasses();
 
-
 // =========================
 // PWA INSTALL BUTTON
 // =========================
@@ -1397,12 +1396,10 @@ let deferredInstallPrompt =
 
 if (installButton) {
 
-    // Always show the button
     installButton.style.display =
-        "block";
+        "none";
 
 
-    // Check if StudentHub is already installed
     if (
         window.matchMedia(
             "(display-mode: standalone)"
@@ -1411,70 +1408,82 @@ if (installButton) {
     ) {
 
         installButton.style.display =
-            "none";
+            "block";
 
     }
 
+    else {
 
-    // =========================
-    // INSTALL PROMPT AVAILABLE
-    // =========================
+        window.addEventListener(
+            "beforeinstallprompt",
+            function (event) {
 
-    window.addEventListener(
-        "beforeinstallprompt",
-        function (event) {
+                event.preventDefault();
 
-            event.preventDefault();
+                deferredInstallPrompt =
+                    event;
 
-            deferredInstallPrompt =
-                event;
+                installButton.style.display =
+                    "block";
 
-        }
-    );
+            }
+        );
 
 
-    // =========================
-    // INSTALL BUTTON CLICK
-    // =========================
+        installButton.addEventListener(
+            "click",
+            async function () {
 
-    installButton.addEventListener(
-    "click",
-    async function () {
+                if (!deferredInstallPrompt) {
 
-        // If Chrome provides the install prompt
-        if (deferredInstallPrompt) {
+                    alert(
+                        "StudentHub cannot be installed from this preview yet. Open it from a supported HTTPS website."
+                    );
 
-            deferredInstallPrompt.prompt();
+                    return;
 
-            const choice =
-                await deferredInstallPrompt.userChoice;
+                }
 
-            deferredInstallPrompt =
-                null;
 
-            if (
-                choice.outcome ===
-                "accepted"
-            ) {
+                deferredInstallPrompt.prompt();
+
+
+                const choice =
+                    await deferredInstallPrompt.userChoice;
+
+
+                deferredInstallPrompt =
+                    null;
+
+
+                if (
+                    choice.outcome ===
+                    "accepted"
+                ) {
+
+                    installButton.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        window.addEventListener(
+            "appinstalled",
+            function () {
 
                 installButton.style.display =
                     "none";
 
+                deferredInstallPrompt =
+                    null;
+
             }
-
-            return;
-
-        }
-
-
-        // If Chrome doesn't provide the prompt
-        alert(
-            "To install StudentHub, tap the Chrome menu (⋮), then choose 'Add to Home screen'."
         );
 
     }
-);
-    );
 
 }
 

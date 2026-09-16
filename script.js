@@ -2011,7 +2011,10 @@ if (installButton) {
 
                 }
             );
-
+console.log(
+    "SW controller:",
+    navigator.serviceWorker.controller
+);
     }
 // =========================
     // EXPENSE TRACKER

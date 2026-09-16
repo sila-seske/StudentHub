@@ -1397,7 +1397,7 @@ let deferredInstallPrompt =
 if (installButton) {
 
     installButton.style.display =
-        "none";
+    "block";
 
 
     if (

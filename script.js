@@ -2301,7 +2301,8 @@ console.log(
         );
 
     }
-// =========================
+
+    // =========================
 // SERVICE WORKER
 // =========================
 
@@ -2331,64 +2332,65 @@ if ("serviceWorker" in navigator) {
             }
         );
 
-    
-// =========================
-// GET SERVICE WORKER
-// =========================
 
-async function getStudentHubServiceWorker() {
+    // =========================
+    // GET SERVICE WORKER
+    // =========================
 
-    if (
-        !("serviceWorker" in navigator)
-    ) {
+    async function getStudentHubServiceWorker() {
 
-        return null;
+        if (
+            !("serviceWorker" in navigator)
+        ) {
+
+            return null;
+
+        }
+
+        try {
+
+            let registration =
+                await navigator.serviceWorker.ready;
+
+            return registration;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "StudentHub service worker error:",
+                error
+            );
+
+            return null;
+
+        }
 
     }
 
-    try {
 
-        let registration =
-            await navigator.serviceWorker.ready;
+    // =========================
+    // TEMPORARY SERVICE WORKER TEST
+    // =========================
 
-        return registration;
+    navigator.serviceWorker.ready.then(
+        function (registration) {
 
-    }
+            console.log(
+                "StudentHub SW ready:",
+                registration.active
+            );
 
-    catch (error) {
+            console.log(
+                "StudentHub SW controller:",
+                navigator.serviceWorker.controller
+            );
 
-        console.error(
-            "StudentHub service worker error:",
-            error
-        );
-
-        return null;
-
-    }
+        }
+    );
 
 }
-
-
-// =========================
-// TEMPORARY SERVICE WORKER TEST
-// =========================
-
-navigator.serviceWorker.ready.then(
-    function (registration) {
-
-        console.log(
-            "StudentHub SW ready:",
-            registration.active
-        );
-
-        console.log(
-            "StudentHub SW controller:",
-            navigator.serviceWorker.controller
-        );
-
-    }
-);
-    
 
 
     // =========================

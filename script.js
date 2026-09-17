@@ -2331,38 +2331,6 @@ if ("serviceWorker" in navigator) {
             }
         );
 
-// =========================
-// SERVICE WORKER
-// =========================
-
-if ("serviceWorker" in navigator) {
-
-    navigator.serviceWorker
-        .register(
-            "./service-worker.js"
-        )
-        .then(
-            function () {
-
-                console.log(
-                    "StudentHub service worker registered!"
-                );
-
-            }
-        )
-        .catch(
-            function (error) {
-
-                console.log(
-                    "Service worker registration failed:",
-                    error
-                );
-
-            }
-        );
-
-}
-    
     
 // =========================
 // GET SERVICE WORKER

@@ -2302,38 +2302,7 @@ console.log(
 
     }
 
-    // =========================
-// SERVICE WORKER
-// =========================
-
-if ("serviceWorker" in navigator) {
-
-    navigator.serviceWorker
-        .register(
-            "./service-worker.js"
-        )
-        .then(
-            function () {
-
-                console.log(
-                    "StudentHub service worker registered!"
-                );
-
-            }
-        )
-        .catch(
-            function (error) {
-
-                console.log(
-                    "Service worker registration failed:",
-                    error
-                );
-
-            }
-        );
-
-
-    // =========================
+        // =========================
     // GET SERVICE WORKER
     // =========================
 
@@ -2346,6 +2315,7 @@ if ("serviceWorker" in navigator) {
             return null;
 
         }
+
 
         try {
 
@@ -2371,28 +2341,19 @@ if ("serviceWorker" in navigator) {
 
 
     // =========================
-    // TEMPORARY SERVICE WORKER TEST
+    // CHECK NOTIFICATION SUPPORT
     // =========================
 
-    navigator.serviceWorker.ready.then(
-        function (registration) {
+    function notificationsSupported() {
 
-            console.log(
-                "StudentHub SW ready:",
-                registration.active
-            );
+        return (
+            "Notification" in window &&
+            "serviceWorker" in navigator
+        );
 
-            console.log(
-                "StudentHub SW controller:",
-                navigator.serviceWorker.controller
-            );
+    }
 
-        }
-    );
-
-}
-
-
+    
     // =========================
     // CHECK NOTIFICATION SUPPORT
     // =========================

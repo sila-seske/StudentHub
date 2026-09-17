@@ -28,6 +28,38 @@
 
 })();
 // =========================
+// SERVICE WORKER
+// =========================
+
+if ("serviceWorker" in navigator) {
+
+    navigator.serviceWorker
+        .register(
+            "./service-worker.js"
+        )
+        .then(
+            function (registration) {
+
+                console.log(
+                    "StudentHub service worker registered!",
+                    registration.scope
+                );
+
+            }
+        )
+        .catch(
+            function (error) {
+
+                console.error(
+                    "StudentHub service worker registration failed:",
+                    error
+                );
+
+            }
+        );
+
+}
+// =========================
 // STUDENTHUB
 // =========================
 

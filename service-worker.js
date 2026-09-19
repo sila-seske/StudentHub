@@ -3,7 +3,7 @@
 // NOTIFICATION ENGINE
 // =========================
 
-const CACHE_NAME = "studenthub-v26";
+const CACHE_NAME = "studenthub-v27";
 
 const FILES_TO_CACHE = [
     "./",
@@ -265,8 +265,8 @@ self.addEventListener(
                         ) {
 
                             return clients.openWindow(
-                                "./index.html"
-                            );
+    "/"
+);
 
                         }
 
